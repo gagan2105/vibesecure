@@ -1,0 +1,145 @@
+/* ArchDiagram.css */
+.arch-panel { display: flex; flex-direction: column; gap: 20px; }
+
+.arch-info-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 800px) {
+  .arch-info-row { grid-template-columns: 1fr; }
+}
+
+.arch-info-card { padding: 24px; }
+.arch-concerns { grid-column: span 1; }
+
+.arch-info-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.arch-info-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.arch-components {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.concerns-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.concerns-list li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.concerns-list li::before {
+  content: '→';
+  color: var(--accent-yellow);
+  font-size: 0.8rem;
+}
+
+/* Diagram Canvas */
+.arch-diagram-card { padding: 32px; }
+
+.arch-diagram-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.arch-diagram-canvas {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.arch-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.arch-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 22px;
+  border-radius: var(--radius-md);
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: default;
+  animation: fadeInUp 0.4s ease both;
+}
+
+.arch-node:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.arch-node-icon { font-size: 1.2rem; }
+.arch-node-label { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); }
+
+.arch-edges {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.arch-edge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+
+.arch-edge-from,
+.arch-edge-to {
+  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  background: rgba(0,212,255,0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,212,255,0.2);
+}
+
+.arch-edge-arrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.arch-edge-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.04);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-style: italic;
+}

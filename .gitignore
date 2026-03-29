@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+dist/
+build/
+.next/
+.server/
+.output/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.sample
+
+# System
+.DS_Store
+Thumbs.db
+*.lnk
+
+# AI/Brain-related (Internal Artifacts)
+architecture_overview.md
+architecture_overview_*.md
+vibesecure_architecture_viz_*.png
+login_flow_test_17*.webp
+test_api.js
+architecture_overview_1774783194883.md
+vibesecure_architecture_viz_1774783297238.png
+login_flow_test_174*.webp
+
+# Local Temp
+tmp/
+.gemini/
