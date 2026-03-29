@@ -336,9 +336,13 @@ function getMockResponse(code) {
 // =============================================
 // Start Server
 // =============================================
-app.listen(PORT, () => {
-  console.log(`\n🛡️  VibeSecure API running on http://localhost:${PORT}`);
-  console.log(`   Health: http://localhost:${PORT}/health`);
-  console.log(`   Auth:   ${firebaseInitialized ? '✅ Firebase enabled' : '⚠️  Dev mode (no auth)'}`);
-  console.log(`   AI:     ${process.env.OPENROUTER_API_KEY && process.env.OPENROUTER_API_KEY !== 'your_openrouter_api_key_here' ? '✅ OpenRouter connected' : '⚠️  Mock mode (no API key)'}\n`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`\n🛡️  VibeSecure API running on http://localhost:${PORT}`);
+    console.log(`   Health: http://localhost:${PORT}/health`);
+    console.log(`   Auth:   ${firebaseInitialized ? '✅ Firebase enabled' : '⚠️  Dev mode (no auth)'}`);
+    console.log(`   AI:     ${process.env.OPENROUTER_API_KEY && process.env.OPENROUTER_API_KEY !== 'your_openrouter_api_key_here' ? '✅ OpenRouter connected' : '⚠️  Mock mode (no API key)'}\n`);
+  });
+}
+
+export default app;
